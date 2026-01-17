@@ -11,35 +11,23 @@ class Game:
         if self.isValidCoup(valeur):
             self.grille[x][y] = valeur
 
-# faire une fonction pour récupérer les coordonnées (x,y) du coup
-    def getXCoup(self, coup):
-        for i in range(1, self.grille.len()):
-            if self.grille[i] == coup:
-                    return i
 
-    def getYCoup(self, coup):
-        for i in range(1, self.grille.len()):
-            for j in range(1, self.grille[i].len()):
-                if self.grille[i][j] == coup:
-                    return j
-
-# faire une fonction pour récupérer le chiffre à une coordonnée donnée (peut être pas utile)
 
 # Vérifie si le coup est valide
-    def isValidCoup(self, coup):
+    def isValidCoup(self, row, col, num):
+        if num in self.grille.grid[row]:
+            return False
         for i in range(9):
-            if coup in self.grille[i]:
+            if self.grille.grid[i][col] == num:
                 return False
-            for j in range(9):
-                if coup in self.grille[self.getXCoup(coup)][j]:
+        start_row = (row // 3) * 3
+        start_col = (col // 3) * 3
+        for i in range(3):
+            for j in range(3):
+                if self.grille.grid[start_row + i][start_col + j] == num:
                     return False
-        blocs = []
-        for bi in range(0, 9, 3):
-            for bj in range(0, 9, 3):
-                bloc = [self.grille[i][bj:bj + 3] for i in range(bi, bi + 3)]
-                blocs.append(bloc)
-        # pour vérifier pour le carré -> prendre les coordonnées du coup puis ajouté 3 au x et 3 au y pour vérifier les nombre autour de lui
         return True
+
 
 
 
