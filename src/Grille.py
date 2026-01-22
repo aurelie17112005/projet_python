@@ -1,4 +1,5 @@
 import random
+from Game import Game
 
 
 class Grille:
@@ -10,20 +11,20 @@ class Grille:
             for j in range(taille):
                 self.board[i].append(0)
 
-    def populate_grille(self, taille):
-        nb_insert = 0
-        nb_carre = 1
-        for i in range(3 * nb_carre):
-            if nb_carre == taille/3+1:
-                break
-            else:
-                for j in range(3 * nb_carre):
-                    if nb_insert == 9:
-                        break
-                    else:
-                        nb_insert = nb_insert + 1
-                        self.board[i] = random.randint(1, 9)
-
+    def fill_grid(self):
+        for i in range(9):
+            for j in range(9):
+                if self.board[i][j] == 0:
+                    chiffres = list(range(1, 10))
+                    random.shuffle(chiffres)
+                    for num in chiffres:
+                        if Game.isValidCoup(i, j, num):
+                            self.board[i][j] = num
+                            if self.fill_grid():
+                                return True
+                            self.board[i][j] = 0  # backtrack
+                    return False
+        return True
 
     def to_string(self):
         display = ""
