@@ -1,6 +1,9 @@
-from Grille import Grille
 import random
 import copy
+
+def some_function_that_uses_grille():
+    from Grille import Grille
+
 class Game:
     def __init__(self, grille):
         self.grille = grille
@@ -17,16 +20,17 @@ class Game:
 
 # Vérifie si le coup est valide
     def isValidCoup(self, row, col, num):
-        if num in self.grille.grid[row]:
+        # Utilisation directe de self.grille au lieu de self.grille.grid
+        if num in self.grille[row]:  # Vérifie la ligne
             return False
         for i in range(9):
-            if self.grille.grid[i][col] == num:
+            if self.grille[i][col] == num:  # Vérifie la colonne
                 return False
         start_row = (row // 3) * 3
         start_col = (col // 3) * 3
         for i in range(3):
             for j in range(3):
-                if self.grille.grid[start_row + i][start_col + j] == num:
+                if self.grille[start_row + i][start_col + j] == num:  # Vérifie le sous-carré
                     return False
         return True
 
@@ -77,7 +81,7 @@ class Game:
                 backup = self.grille[row][col]
                 self.grille[row][col] = 0
                 if self.count_solutions() != 1:
-                    # remettre le chiffre si la solution n'est plus unique
+                    # remettre lgae chiffre si la solution n'est plus unique
                     self.grille[row][col] = backup
                 else:
                     attempts -= 1

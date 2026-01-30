@@ -18,7 +18,8 @@ class Grille:
                     chiffres = list(range(1, 10))
                     random.shuffle(chiffres)
                     for num in chiffres:
-                        if Game.isValidCoup(i, j, num):
+                        game = Game(self.board)
+                        if game.isValidCoup(i, j, num):
                             self.board[i][j] = num
                             if self.fill_grid():
                                 return True

@@ -53,5 +53,7 @@ class CarreMagic:
         return True
 
     def to_string(self):
-            for ligne in self.grille:
-                print(" ".join(f"{val:^2}" for val in ligne))
+        result = []
+        for ligne in self.grille:
+            result.append(" ".join(f"{val:^2}" for val in ligne))
+        return "\n".join(result)
