@@ -1,8 +1,8 @@
-Sudoku Solver - Projet de Résolution de Sudoku avec Backtracking
+# Sudoku Solver - Projet de Résolution de Sudoku avec Backtracking
 
 Ce projet implémente un résolveur de Sudoku utilisant l'algorithme du backtracking et inclut une interface graphique avec Tkinter. Il permet de résoudre un Sudoku donné ou de générer des grilles de Sudoku partiellement résolues et à résoudre.
 
-Fonctionnalités
+## Fonctionnalités
 
 Résolution d'un Sudoku à l'aide de l'algorithme de backtracking.
 
@@ -12,7 +12,7 @@ Interface graphique permettant de saisir manuellement des valeurs pour un Sudoku
 
 Détection des carrés résolus et non résolus avec des bordures colorées.
 
-Prérequis
+## Prérequis
 
 Avant de commencer, assurez-vous d'avoir les prérequis suivants installés sur votre machine :
 
@@ -24,7 +24,7 @@ Les bibliothèques suivantes (vous pouvez les installer avec pip si elles ne son
 
 pip install random
 
-Installation
+### Installation
 
 Clonez le dépôt sur votre machine locale :
 
@@ -36,7 +36,7 @@ Installez les dépendances si nécessaire (Python 3 devrait déjà avoir Tkinter
 
 pip install -r requirements.txt
 
-Structure du projet
+## Structure du projet
 
 Voici la structure du projet :
 
@@ -53,7 +53,7 @@ projet-sudoku/
 ├── requirements.txt       # Liste des dépendances à installer
 └── README.md              # Ce fichier
 
-Dépendances
+## Dépendances
 
 Tkinter : utilisé pour l'interface graphique.
 
@@ -86,56 +86,25 @@ Vous pouvez entrer un Sudoku dans l'interface graphique, case par case.
 
 Cliquez sur "Résoudre" pour résoudre le Sudoku avec l'algorithme de backtracking.
 
-Génération d'un Sudoku :
+## Génération d'un Sudoku :
 
 Cliquez sur "Générer" pour générer un Sudoku aléatoire avec des cases vides.
 
 Le Sudoku généré peut être résolu en cliquant sur "Résoudre".
 
-Couleurs des carrés :
+## Couleurs des carrés :
 
 Les carrés résolus seront colorés en vert.
 
 Les carrés non résolus auront une bordure rouge.
 
-Tests automatiques
+## Tests automatiques
 
 Il existe une méthode de vérification automatique dans la classe Sudoku pour s'assurer que la grille est valide après la résolution :
 
 sudoku.verifier_grille()  # Vérifie si la grille résolue est valide.
 
-
 Cela garantit que les règles du Sudoku sont respectées après la résolution.
 
-Contribution
 
-Les contributions à ce projet sont les bienvenues ! Si vous souhaitez ajouter des fonctionnalités ou corriger des bugs, n'hésitez pas à soumettre une pull request.
 
-Auteurs
-
-Votre Nom - Développeur principal
-
-Licence
-
-Ce projet est sous licence MIT - voir le fichier LICENSE
- pour plus de détails.
-
-Explication du README :
-
-Prérequis : Liste des outils et bibliothèques nécessaires pour faire fonctionner le projet.
-
-Installation : Instructions pour cloner et installer le projet.
-
-Structure du projet : Description de l'organisation des fichiers et des dossiers.
-
-Dépendances : Mention des bibliothèques externes utilisées.
-
-Exécution du projet : Comment exécuter l'application avec Tkinter.
-
-Tests : Comment utiliser la fonction de vérification automatique pour tester la grille résolue.
-
-Contribution : Invitation à participer au projet.
-
-Avec ce README.md, vous devriez être en mesure de démarrer rapidement et de guider d'autres développeurs ou utilisateurs intéressés par le projet.
-
-Si vous avez d'autres demandes ou des éléments à ajouter, n'hésitez pas à demander !
